@@ -13,7 +13,7 @@ const OnboardingBottomSection = ({ currentPage, handleNext }) => {
 
     const navigation = useNavigation();
 
-
+    console.log("Navigation>>>", navigation)
     const handleOnboardingScreen = () => {
 
         AsyncStorage.setItem('Onboarding', "true"),

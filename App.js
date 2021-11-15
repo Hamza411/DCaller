@@ -8,7 +8,7 @@ import BottomNavigator from './components/Navigation/BottomNavigator';
 const App = () => {
   return (
     <NavigationContainer>
-      <BottomNavigator />
+      <Navigator />
     </NavigationContainer>
   )
 }

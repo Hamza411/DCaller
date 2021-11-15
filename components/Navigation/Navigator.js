@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, { useState, useEffect } from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OnboardingScreen from '../Organism/OnboardingScreen';
 import DrawerNavigator from './DrawerNavigator';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -18,8 +18,6 @@ const Navigator = () => {
       const value = await AsyncStorage.getItem('Onboarding');
       if (value === 'true') {
         setInitialRoute('Drawer');
-      } else {
-        setInitialRoute('Onboarding');
       }
     } catch (err) {
       setInitialRoute('Onboarding');
@@ -33,10 +31,9 @@ const Navigator = () => {
       {initialRoute ? (
         <Stack.Navigator
           initialRouteName={initialRoute}
-          screenOptions={{headerShown: false}}>
+          screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-          <Stack.Screen name="Tab" component={BottomNavigator} />
-          <Stack.Screen name="Activity" component={ActivityScreen} />
+          {/* <Stack.Screen name="Tab" component={BottomNavigator} /> */}
           <Stack.Screen name="Drawer" component={DrawerNavigator} />
         </Stack.Navigator>
       ) : null}
